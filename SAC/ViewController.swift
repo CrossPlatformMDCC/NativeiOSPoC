@@ -9,9 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    var imagePicker: UIImagePickerController!
-    var newMedia: Bool?
+    @IBOutlet var imageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,19 +20,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-//    @IBAction func useCamera(sender: UIBarButtonItem) {
-//        imagePicker = UIImagePickerController()
-//        imagePicker.delegate = self
-//        imagePicker.sourceType = .Camera
-//        
-//        presentViewController(imagePicker, animated: true, completion: nil)
-//    }
     
-//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-//        imagePicker.dismissViewControllerAnimated(true, completion: nil)
-//        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-//    }
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     @IBAction func useCameraRoll() {
         let picker = UIImagePickerController()

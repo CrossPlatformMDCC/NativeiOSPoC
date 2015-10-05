@@ -50,6 +50,9 @@
                             <constraint firstItem="TP8-CG-MdY" firstAttribute="centerX" secondItem="7rJ-n5-kGt" secondAttribute="centerX" id="t2Y-sX-XY0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="7rJ-n5-kGt" id="NDR-EA-71v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
