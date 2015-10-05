@@ -21,8 +21,16 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
                                 <items>
-                                    <barButtonItem title="Tirar foto" id="unE-8p-QRa"/>
-                                    <barButtonItem title="Escolher foto" id="ELT-tI-p46"/>
+                                    <barButtonItem title="Tirar foto" id="unE-8p-QRa">
+                                        <connections>
+                                            <action selector="useCamera" destination="dkx-z0-nzr" id="9pG-mM-FhQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Escolher foto" id="ELT-tI-p46">
+                                        <connections>
+                                            <action selector="useCameraRoll" destination="dkx-z0-nzr" id="Y2k-vp-ZaJ"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7rJ-n5-kGt">
