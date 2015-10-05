@@ -31,6 +31,11 @@
                                             <action selector="useCameraRoll" destination="dkx-z0-nzr" id="Y2k-vp-ZaJ"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Sepia" id="hFw-aB-Rgx">
+                                        <connections>
+                                            <action selector="filterSepia" destination="dkx-z0-nzr" id="Fe0-I6-kcQ"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7rJ-n5-kGt">

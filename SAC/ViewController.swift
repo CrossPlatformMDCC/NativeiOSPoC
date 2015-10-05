@@ -43,6 +43,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         presentViewController(picker, animated: true, completion: nil)
     }
+    
+    @IBAction func filterSepia() {
+        let originalImage = CIImage(image: imageView.image!)
+        let filter = CIFilter(name: "CISepiaTone")
+        filter?.setDefaults()
+        filter?.setValue(originalImage, forKey: kCIInputImageKey)
+        
+        let outputImage = filter?.outputImage
+        let newImage = UIImage(CIImage: outputImage!)
+        imageView.image = newImage
+        
+    }
 
 }
 
