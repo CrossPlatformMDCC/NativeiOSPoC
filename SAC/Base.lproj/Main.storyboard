@@ -36,9 +36,19 @@
                                             <action selector="filterSepia" destination="dkx-z0-nzr" id="Fe0-I6-kcQ"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Mono" id="zBZ-Tm-Fpk">
+                                        <connections>
+                                            <action selector="filterMono" destination="dkx-z0-nzr" id="fIl-Df-C53"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Invert" id="cya-Ak-sOz">
+                                        <connections>
+                                            <action selector="filterInvert" destination="dkx-z0-nzr" id="5Fa-Pg-sBk"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7rJ-n5-kGt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7rJ-n5-kGt">
                                 <rect key="frame" x="150" y="150" width="300" height="300"/>
                                 <animations/>
                             </imageView>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var imageView: UIImageView!
@@ -50,6 +51,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         filter?.setDefaults()
         filter?.setValue(originalImage, forKey: kCIInputImageKey)
         
+//        let context = CIContext(options: nil)
+//        let outputImage = context.createCGImage(filter.outputImage, fromRect: filter?.outputImage?.extent())
         let outputImage = filter?.outputImage
         let newImage = UIImage(CIImage: outputImage!)
         imageView.image = newImage
@@ -57,6 +60,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func filterSepia() {
         photoFilter("CISepiaTone")
+    }
+    
+    @IBAction func filterMono() {
+        photoFilter("CIPhotoEffectMono")
+    }
+    
+    @IBAction func filterInvert() {
+        photoFilter("CIColorInvert")
     }
 
 }
