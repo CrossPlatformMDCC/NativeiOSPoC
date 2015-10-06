@@ -14,6 +14,8 @@
 		2F3FAC1D1BC200D0009EFB44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F3FAC1B1BC200D0009EFB44 /* LaunchScreen.storyboard */; };
 		2F3FAC281BC200D0009EFB44 /* SACTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3FAC271BC200D0009EFB44 /* SACTests.swift */; };
 		2F3FAC331BC200D0009EFB44 /* SACUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3FAC321BC200D0009EFB44 /* SACUITests.swift */; };
+		2F3FAC411BC21F0F009EFB44 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3FAC401BC21F0F009EFB44 /* GooglePlus.framework */; settings = {ASSET_TAGS = (); }; };
+		2F3FAC431BC21F25009EFB44 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3FAC421BC21F25009EFB44 /* GoogleOpenSource.framework */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		2F3FAC2E1BC200D0009EFB44 /* SACUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SACUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3FAC321BC200D0009EFB44 /* SACUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SACUITests.swift; sourceTree = "<group>"; };
 		2F3FAC341BC200D0009EFB44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F3FAC401BC21F0F009EFB44 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlus.framework; path = "../../../Downloads/google-plus-ios-sdk-1.7.1/GooglePlus.framework"; sourceTree = "<group>"; };
+		2F3FAC421BC21F25009EFB44 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleOpenSource.framework; path = "../../../Downloads/google-plus-ios-sdk-1.7.1/GoogleOpenSource.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F3FAC431BC21F25009EFB44 /* GoogleOpenSource.framework in Frameworks */,
+				2F3FAC411BC21F0F009EFB44 /* GooglePlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +83,8 @@
 		2F3FAC061BC200CF009EFB44 = {
 			isa = PBXGroup;
 			children = (
+				2F3FAC421BC21F25009EFB44 /* GoogleOpenSource.framework */,
+				2F3FAC401BC21F0F009EFB44 /* GooglePlus.framework */,
 				2F3FAC111BC200CF009EFB44 /* SAC */,
 				2F3FAC261BC200D0009EFB44 /* SACTests */,
 				2F3FAC311BC200D0009EFB44 /* SACUITests */,
@@ -490,6 +498,7 @@
 				2F3FAC391BC200D0009EFB44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F3FAC3A1BC200D0009EFB44 /* Build configuration list for PBXNativeTarget "SACTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +507,7 @@
 				2F3FAC3C1BC200D0009EFB44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F3FAC3D1BC200D0009EFB44 /* Build configuration list for PBXNativeTarget "SACUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +516,7 @@
 				2F3FAC3F1BC200D0009EFB44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
