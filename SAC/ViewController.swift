@@ -9,7 +9,14 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//G+
+import AddressBook
+import MediaPlayer
+import AssetsLibrary
+import CoreLocation
+import CoreMotion
+
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GPPSignInDelegate {
     @IBOutlet var imageView: UIImageView!
 
     override func viewDidLoad() {
@@ -68,6 +75,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func filterInvert() {
         photoFilter("CIColorInvert")
+    }
+    
+    //MARK: G+
+    func finishedWithAuth(auth: GTMOAuth2Authentication!, error: NSError!) {
+        
+    }
+    
+    func didDisconnectWithError(error: NSError!) {
+        
     }
 
 }

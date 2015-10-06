@@ -10,6 +10,7 @@
 #define SAC_Bridging_Header_h
 
 #import <GooglePlus/GooglePlus.h>
+#import <GoogleOpenSource/GoogleOpenSource.h>
 #import <GooglePlusShareActivity/GPPShareActivity.h>
 
 #endif /* SAC_Bridging_Header_h */
