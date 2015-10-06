@@ -48,6 +48,7 @@
 		2F3FAC2E1BC200D0009EFB44 /* SACUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SACUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3FAC321BC200D0009EFB44 /* SACUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SACUITests.swift; sourceTree = "<group>"; };
 		2F3FAC341BC200D0009EFB44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F3FAC521BC360A2009EFB44 /* SAC-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SAC-Bridging-Header.h"; sourceTree = "<group>"; };
 		55E6401767524599B0600CCF /* Pods-SAC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAC.release.xcconfig"; path = "Pods/Target Support Files/Pods-SAC/Pods-SAC.release.xcconfig"; sourceTree = "<group>"; };
 		6F0D0DDE5FF5F1187B94FD6A /* libPods-SAC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SAC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E0F5100DC048BC8D8767CA /* Pods-SAC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SAC/Pods-SAC.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 				2F3FAC191BC200D0009EFB44 /* Assets.xcassets */,
 				2F3FAC1B1BC200D0009EFB44 /* LaunchScreen.storyboard */,
 				2F3FAC1E1BC200D0009EFB44 /* Info.plist */,
+				2F3FAC521BC360A2009EFB44 /* SAC-Bridging-Header.h */,
 			);
 			path = SAC;
 			sourceTree = "<group>";
@@ -463,9 +465,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SAC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.great.SAC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SAC/SAC-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -478,9 +482,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SAC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.great.SAC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SAC/SAC-Bridging-Header.h";
 			};
 			name = Release;
 		};
