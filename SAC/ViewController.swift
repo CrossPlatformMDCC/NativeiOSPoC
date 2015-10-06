@@ -17,11 +17,20 @@ import CoreLocation
 import CoreMotion
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GPPSignInDelegate {
+    
+    var signIn : GPPSignIn?
+    
     @IBOutlet var imageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        signIn = GPPSignIn.sharedInstance()
+        signIn?.shouldFetchGooglePlusUser = true
+        signIn?.clientID = "686168425382-8be7kjup8eev5ggs7ttdd1jauj1fesju.apps.googleusercontent.com"
+        signIn?.scopes = [kGTLAuthScopePlusLogin]
+        signIn?.delegate = self
+        signIn?.authenticate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,6 +94,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func didDisconnectWithError(error: NSError!) {
         
     }
+    
+    
 
 }
 

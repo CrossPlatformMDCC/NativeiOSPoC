@@ -46,6 +46,11 @@
                                             <action selector="filterInvert" destination="dkx-z0-nzr" id="5Fa-Pg-sBk"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Google+" id="1cN-Bu-WpE">
+                                        <connections>
+                                            <action selector="filterInvert" destination="dkx-z0-nzr" id="rLj-rC-o2T"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7rJ-n5-kGt">
