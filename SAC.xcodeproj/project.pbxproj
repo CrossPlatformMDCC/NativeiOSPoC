@@ -14,8 +14,7 @@
 		2F3FAC1D1BC200D0009EFB44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F3FAC1B1BC200D0009EFB44 /* LaunchScreen.storyboard */; };
 		2F3FAC281BC200D0009EFB44 /* SACTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3FAC271BC200D0009EFB44 /* SACTests.swift */; };
 		2F3FAC331BC200D0009EFB44 /* SACUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3FAC321BC200D0009EFB44 /* SACUITests.swift */; };
-		2F3FAC411BC21F0F009EFB44 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3FAC401BC21F0F009EFB44 /* GooglePlus.framework */; settings = {ASSET_TAGS = (); }; };
-		2F3FAC431BC21F25009EFB44 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3FAC421BC21F25009EFB44 /* GoogleOpenSource.framework */; settings = {ASSET_TAGS = (); }; };
+		B2405BB1E2D923698938E14C /* libPods-SAC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F0D0DDE5FF5F1187B94FD6A /* libPods-SAC.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +48,9 @@
 		2F3FAC2E1BC200D0009EFB44 /* SACUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SACUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3FAC321BC200D0009EFB44 /* SACUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SACUITests.swift; sourceTree = "<group>"; };
 		2F3FAC341BC200D0009EFB44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F3FAC401BC21F0F009EFB44 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlus.framework; path = "../../../Downloads/google-plus-ios-sdk-1.7.1/GooglePlus.framework"; sourceTree = "<group>"; };
-		2F3FAC421BC21F25009EFB44 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleOpenSource.framework; path = "../../../Downloads/google-plus-ios-sdk-1.7.1/GoogleOpenSource.framework"; sourceTree = "<group>"; };
+		55E6401767524599B0600CCF /* Pods-SAC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAC.release.xcconfig"; path = "Pods/Target Support Files/Pods-SAC/Pods-SAC.release.xcconfig"; sourceTree = "<group>"; };
+		6F0D0DDE5FF5F1187B94FD6A /* libPods-SAC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SAC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E0F5100DC048BC8D8767CA /* Pods-SAC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SAC/Pods-SAC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F3FAC431BC21F25009EFB44 /* GoogleOpenSource.framework in Frameworks */,
-				2F3FAC411BC21F0F009EFB44 /* GooglePlus.framework in Frameworks */,
+				B2405BB1E2D923698938E14C /* libPods-SAC.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,12 +82,12 @@
 		2F3FAC061BC200CF009EFB44 = {
 			isa = PBXGroup;
 			children = (
-				2F3FAC421BC21F25009EFB44 /* GoogleOpenSource.framework */,
-				2F3FAC401BC21F0F009EFB44 /* GooglePlus.framework */,
 				2F3FAC111BC200CF009EFB44 /* SAC */,
 				2F3FAC261BC200D0009EFB44 /* SACTests */,
 				2F3FAC311BC200D0009EFB44 /* SACUITests */,
 				2F3FAC101BC200CF009EFB44 /* Products */,
+				84CE47317614CC51926BE5F1 /* Pods */,
+				9AF5B29AA4D2EA622932E59E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +132,23 @@
 			path = SACUITests;
 			sourceTree = "<group>";
 		};
+		84CE47317614CC51926BE5F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8E0F5100DC048BC8D8767CA /* Pods-SAC.debug.xcconfig */,
+				55E6401767524599B0600CCF /* Pods-SAC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9AF5B29AA4D2EA622932E59E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F0D0DDE5FF5F1187B94FD6A /* libPods-SAC.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F3FAC371BC200D0009EFB44 /* Build configuration list for PBXNativeTarget "SAC" */;
 			buildPhases = (
+				75D68442B98BB5D3B89B49C5 /* Check Pods Manifest.lock */,
 				2F3FAC0B1BC200CF009EFB44 /* Sources */,
 				2F3FAC0C1BC200CF009EFB44 /* Frameworks */,
 				2F3FAC0D1BC200CF009EFB44 /* Resources */,
+				CFC0D3F43160858A54182C39 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,6 +276,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		75D68442B98BB5D3B89B49C5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CFC0D3F43160858A54182C39 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SAC/Pods-SAC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2F3FAC0B1BC200CF009EFB44 /* Sources */ = {
@@ -405,6 +456,7 @@
 		};
 		2F3FAC381BC200D0009EFB44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8E0F5100DC048BC8D8767CA /* Pods-SAC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -419,6 +471,7 @@
 		};
 		2F3FAC391BC200D0009EFB44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55E6401767524599B0600CCF /* Pods-SAC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
