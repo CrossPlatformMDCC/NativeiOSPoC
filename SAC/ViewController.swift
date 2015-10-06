@@ -16,9 +16,10 @@ import AssetsLibrary
 import CoreLocation
 import CoreMotion
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GPPSignInDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GPPSignInDelegate, CLLocationManagerDelegate {
     
     var signIn : GPPSignIn?
+    let locationManager = CLLocationManager();
     
     @IBOutlet var imageView: UIImageView!
 
@@ -98,9 +99,49 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func shareGooglePlus(sender: AnyObject) {
         let shareDialog = GPPShare.sharedInstance().nativeShareDialog();
         shareDialog.attachImage(imageView.image);
-        //shareDialog.setURLToShare(NSURL(string: "http://www.great.ufc.br/"));
         shareDialog.setPrefillText("Teste");
         shareDialog.open();
+    }
+    
+    @IBAction func shareLocation(sender: AnyObject) {
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        locationManager.requestAlwaysAuthorization();
+        locationManager.startUpdatingLocation();
+        
+//        let shareDialog = GPPShare.sharedInstance().nativeShareDialog();
+//        let positionLink = "https://maps.google.com/maps?q=";
+//        shareDialog.setURLToShare(NSURL(string: positionLink));
+        
+        //var link = "https://plus.google.com/share?url={https://maps.google.com/maps?q=" + pos + "}";
+//        shareDialog.setPrefillText("Teste");
+//        shareDialog.open();
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error) -> Void in
+            if (error != nil) {
+                print("Reverse geocoder failed with error" + error!.localizedDescription)
+            }
+            
+            if placemarks!.count > 0 {
+                let pm = placemarks![0] as CLPlacemark
+                self.displayLocationInfo(pm)
+            } else {
+                print("Problem with the data received from geocoder")
+            }
+        })
+    }
+    
+    func displayLocationInfo(placemark: CLPlacemark) {
+        locationManager.stopUpdatingLocation()
+        print(placemark.country)
+        print(placemark.location?.coordinate.latitude)
+        print(placemark.location?.coordinate.longitude)
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Error while updating location: " + error.localizedDescription)
     }
     
 }

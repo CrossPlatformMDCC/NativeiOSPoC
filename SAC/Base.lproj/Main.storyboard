@@ -51,6 +51,11 @@
                                             <action selector="shareGooglePlus:" destination="dkx-z0-nzr" id="hbg-5Y-hA6"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="G+ Position" id="P6x-hB-M2a">
+                                        <connections>
+                                            <action selector="shareLocation:" destination="dkx-z0-nzr" id="rE4-Qm-DOx"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7rJ-n5-kGt">
