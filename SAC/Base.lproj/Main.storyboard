@@ -48,7 +48,7 @@
                                     </barButtonItem>
                                     <barButtonItem title="Google+" id="1cN-Bu-WpE">
                                         <connections>
-                                            <action selector="filterInvert" destination="dkx-z0-nzr" id="rLj-rC-o2T"/>
+                                            <action selector="shareGooglePlus:" destination="dkx-z0-nzr" id="hbg-5Y-hA6"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

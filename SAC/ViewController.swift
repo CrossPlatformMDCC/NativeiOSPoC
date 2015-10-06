@@ -88,14 +88,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: G+
     func finishedWithAuth(auth: GTMOAuth2Authentication!, error: NSError!) {
-        
+//        NSLog("Received error %@ and auth object %@", error, auth);
     }
     
     func didDisconnectWithError(error: NSError!) {
         
     }
     
+    @IBAction func shareGooglePlus(sender: AnyObject) {
+        let shareDialog = GPPShare.sharedInstance().nativeShareDialog();
+        shareDialog.attachImage(imageView.image);
+        //shareDialog.setURLToShare(NSURL(string: "http://www.great.ufc.br/"));
+        shareDialog.setPrefillText("Teste");
+        shareDialog.open();
+    }
     
-
 }
 
