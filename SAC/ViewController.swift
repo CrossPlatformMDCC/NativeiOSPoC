@@ -19,6 +19,8 @@ import CoreMotion
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GPPSignInDelegate, CLLocationManagerDelegate {
     
     var signIn : GPPSignIn?
+    var latitude : String?
+    var longitude : String?
     let locationManager = CLLocationManager();
     
     @IBOutlet var imageView: UIImageView!
@@ -127,6 +129,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if placemarks!.count > 0 {
                 let pm = placemarks![0] as CLPlacemark
                 self.displayLocationInfo(pm)
+                print("Lat:" + self.latitude!)
+                print("Log:" + self.longitude!)
+                
+                // G+
+                let shareDialog = GPPShare.sharedInstance().nativeShareDialog();
+//                let positionLink = "https://maps.google.com/maps?q=";
+                let positionLink = "https://maps.google.com/maps?q=" + self.latitude! + "," + self.longitude!;
+                print("URL:" + positionLink)
+                shareDialog.setURLToShare(NSURL(string: positionLink));
+                shareDialog.setPrefillText("Posição");
+                shareDialog.open();
             } else {
                 print("Problem with the data received from geocoder")
             }
@@ -135,9 +148,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func displayLocationInfo(placemark: CLPlacemark) {
         locationManager.stopUpdatingLocation()
+        latitude = String(placemark.location!.coordinate.latitude)
+        longitude = String(placemark.location!.coordinate.longitude)
         print(placemark.country)
-        print(placemark.location?.coordinate.latitude)
-        print(placemark.location?.coordinate.longitude)
+//        print(placemark.location?.coordinate.latitude)
+//        print(placemark.location?.coordinate.longitude)
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
