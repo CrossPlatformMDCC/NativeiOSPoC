@@ -28,12 +28,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        signIn = GPPSignIn.sharedInstance()
-        signIn?.shouldFetchGooglePlusUser = true
-        signIn?.clientID = "686168425382-8be7kjup8eev5ggs7ttdd1jauj1fesju.apps.googleusercontent.com"
-        signIn?.scopes = [kGTLAuthScopePlusLogin]
-        signIn?.delegate = self
-        signIn?.authenticate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,15 +63,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let filter = CIFilter(name: filterName)
         filter?.setDefaults()
         filter?.setValue(originalImage, forKey: kCIInputImageKey)
-//        let outputImage = filter?.outputImage
-//        let newImage = UIImage(CIImage: outputImage!)
         let newImage = UIImage(CGImage: CIContext(options:nil).createCGImage((filter?.outputImage)!, fromRect: (filter?.outputImage!.extent)!))
-
         imageView.image = newImage
-        
-//        let originalPicture = imageView.image!
-//        let controlsFilter = CIFilter(name: filterName)
-//        controlsFilter?.setValue(CIImage(image: originalPicture), forKey: kCIInputImageKey)
     }
     
     @IBAction func filterSepia() {
@@ -94,14 +81,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: G+
     func finishedWithAuth(auth: GTMOAuth2Authentication!, error: NSError!) {
-//        NSLog("Received error %@ and auth object %@", error, auth);
+        //NSLog("Received error %@ and auth object %@", error, auth);
     }
     
     func didDisconnectWithError(error: NSError!) {
         
     }
     
+    func loginGooglePlus() {
+        signIn = GPPSignIn.sharedInstance()
+        signIn?.shouldFetchGooglePlusUser = true
+        signIn?.clientID = "686168425382-8be7kjup8eev5ggs7ttdd1jauj1fesju.apps.googleusercontent.com"
+        signIn?.scopes = [kGTLAuthScopePlusLogin]
+        signIn?.delegate = self
+        signIn?.authenticate()
+    }
+    
     @IBAction func shareGooglePlus(sender: AnyObject) {
+        loginGooglePlus()
+        
         let shareDialog = GPPShare.sharedInstance().nativeShareDialog();
         shareDialog.attachImage(imageView.image);
         shareDialog.setPrefillText("Teste");
@@ -109,6 +107,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func shareLocation(sender: AnyObject) {
+        loginGooglePlus()
+        
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.requestWhenInUseAuthorization();
@@ -124,13 +124,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if placemarks!.count > 0 {
                 let pm = placemarks![0] as CLPlacemark
                 self.displayLocationInfo(pm)
-                print("Lat:" + self.latitude!)
-                print("Log:" + self.longitude!)
+                // print("Lat:" + self.latitude!)
+                // print("Log:" + self.longitude!)
                 
                 // G+
                 let shareDialog = GPPShare.sharedInstance().nativeShareDialog();
                 let positionLink = "https://maps.google.com/maps?q=" + self.latitude! + "," + self.longitude!;
-                print("URL:" + positionLink)
+                // print("URL:" + positionLink)
                 shareDialog.setURLToShare(NSURL(string: positionLink));
                 shareDialog.setPrefillText("Posição");
                 shareDialog.open();
@@ -144,9 +144,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         locationManager.stopUpdatingLocation()
         latitude = String(placemark.location!.coordinate.latitude)
         longitude = String(placemark.location!.coordinate.longitude)
-//        print(placemark.country)
-//        print(placemark.location?.coordinate.latitude)
-//        print(placemark.location?.coordinate.longitude)
+        // print(placemark.country)
+        // print(placemark.location?.coordinate.latitude)
+        // print(placemark.location?.coordinate.longitude)
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
