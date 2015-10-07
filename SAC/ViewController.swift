@@ -69,12 +69,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let filter = CIFilter(name: filterName)
         filter?.setDefaults()
         filter?.setValue(originalImage, forKey: kCIInputImageKey)
-        
-//        let context = CIContext(options: nil)
-//        let outputImage = context.createCGImage(filter.outputImage, fromRect: filter?.outputImage?.extent())
-        let outputImage = filter?.outputImage
-        let newImage = UIImage(CIImage: outputImage!)
+//        let outputImage = filter?.outputImage
+//        let newImage = UIImage(CIImage: outputImage!)
+        let newImage = UIImage(CGImage: CIContext(options:nil).createCGImage((filter?.outputImage)!, fromRect: (filter?.outputImage!.extent)!))
+
         imageView.image = newImage
+        
+//        let originalPicture = imageView.image!
+//        let controlsFilter = CIFilter(name: filterName)
+//        controlsFilter?.setValue(CIImage(image: originalPicture), forKey: kCIInputImageKey)
     }
     
     @IBAction func filterSepia() {
