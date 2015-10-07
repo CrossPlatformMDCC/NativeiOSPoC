@@ -1,0 +1,6 @@
+FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/googleplus-ios-sdk/**/" "$(PODS_ROOT)/googleplus-ios-sdk/**/" "$(PODS_ROOT)/googleplus-ios-sdk/google-plus-ios-sdk-1.7.1" "$(PODS_ROOT)/googleplus-ios-sdk/google-plus-ios-sdk-1.7.1"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/GooglePlusShareActivity" "${PODS_ROOT}/Headers/Public/googleplus-ios-sdk" "${PODS_ROOT}/Headers/Public/googleplus-ios-sdk/GoogleOpenSource" "${PODS_ROOT}/Headers/Public/googleplus-ios-sdk/GooglePlus"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/GooglePlusShareActivity" -isystem "${PODS_ROOT}/Headers/Public/googleplus-ios-sdk" -isystem "${PODS_ROOT}/Headers/Public/googleplus-ios-sdk/GoogleOpenSource" -isystem "${PODS_ROOT}/Headers/Public/googleplus-ios-sdk/GooglePlus"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"GooglePlusShareActivity" -framework "AddressBook" -framework "AssetsLibrary" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreMotion" -framework "CoreText" -framework "Foundation" -framework "GoogleOpenSource" -framework "GooglePlus" -framework "MediaPlayer" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
+PODS_ROOT = ${SRCROOT}/Pods

@@ -1,0 +1,2 @@
+GOOGLEPLUSSHAREACTIVITY_FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/googleplus-ios-sdk/**/"
+GOOGLEPLUSSHAREACTIVITY_OTHER_LDFLAGS = -framework "Foundation" -framework "UIKit"
