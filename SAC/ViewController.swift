@@ -110,14 +110,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.requestWhenInUseAuthorization();
         locationManager.startUpdatingLocation();
-        
-//        let shareDialog = GPPShare.sharedInstance().nativeShareDialog();
-//        let positionLink = "https://maps.google.com/maps?q=";
-//        shareDialog.setURLToShare(NSURL(string: positionLink));
-        
-        //var link = "https://plus.google.com/share?url={https://maps.google.com/maps?q=" + pos + "}";
-//        shareDialog.setPrefillText("Teste");
-//        shareDialog.open();
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -134,7 +126,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 
                 // G+
                 let shareDialog = GPPShare.sharedInstance().nativeShareDialog();
-//                let positionLink = "https://maps.google.com/maps?q=";
                 let positionLink = "https://maps.google.com/maps?q=" + self.latitude! + "," + self.longitude!;
                 print("URL:" + positionLink)
                 shareDialog.setURLToShare(NSURL(string: positionLink));
@@ -150,7 +141,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         locationManager.stopUpdatingLocation()
         latitude = String(placemark.location!.coordinate.latitude)
         longitude = String(placemark.location!.coordinate.longitude)
-        print(placemark.country)
+//        print(placemark.country)
 //        print(placemark.location?.coordinate.latitude)
 //        print(placemark.location?.coordinate.longitude)
     }
