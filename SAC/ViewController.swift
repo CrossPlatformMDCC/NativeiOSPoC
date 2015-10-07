@@ -108,7 +108,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func shareLocation(sender: AnyObject) {
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        locationManager.requestAlwaysAuthorization();
+        locationManager.requestWhenInUseAuthorization();
         locationManager.startUpdatingLocation();
         
 //        let shareDialog = GPPShare.sharedInstance().nativeShareDialog();
