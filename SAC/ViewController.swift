@@ -22,8 +22,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var latitude : String?
     var longitude : String?
     let locationManager = CLLocationManager();
+    var photoIndex : Int = 0;
+    var photoArray = [UIImage]();
     
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var imageLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +40,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        photoArray.append(imageView.image!); // salvando imagens em array (FIXME: gambiarra, usa muita memoria)
         dismissViewControllerAnimated(true, completion: nil)
+        
+//        photoIndex++;
+//        print(photoIndex);
+        photoIndex = photoArray.count;
+        updatePhotoLabel();
     }
     
     @IBAction func useCameraRoll() {
@@ -50,12 +59,50 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func useCamera() {
-        let picker = UIImagePickerController()
-        
-        picker.delegate = self
-        picker.sourceType = .Camera
-        
-        presentViewController(picker, animated: true, completion: nil)
+//        let picker = UIImagePickerController()
+//        
+//        picker.delegate = self
+//        picker.sourceType = .Camera
+//        
+//        presentViewController(picker, animated: true, completion: nil)
+        imageView.image = photoArray[0];
+        photoIndex = 1;
+        updatePhotoLabel();
+    }
+    
+    @IBAction func prevPhoto() {
+        showPhoto(photoIndex-1)
+    }
+    
+    @IBAction func nextPhoto() {
+        showPhoto(photoIndex+1)
+    }
+    
+    func showPhoto(var index : Int) {
+        if (index >= photoArray.count) {
+            index = 0
+        } else if (index < 0) {
+            index = photoArray.count - 1
+        }
+        imageView.image = photoArray[index];
+//        if (photoArray.count > 0) {
+//            updatePhotoLabel()
+//        }
+        photoIndex = index;
+        updatePhotoLabel()
+//        if(index >= photos.length)
+//        index = 0;
+//        if(index < 0)
+//        index = photos.length-1;
+//        var img = document.getElementById('camera_image');
+//        img.src = photos[index];
+//        photoIndex = index;
+//        if(photos.length > 0)
+//        $("#nImage").html(index+1 + " de " + photos.length);
+    }
+    
+    func updatePhotoLabel() {
+        imageLabel.text = String(photoIndex) + " de " + String(photoArray.count);
     }
     
     func photoFilter(filterName: String) {

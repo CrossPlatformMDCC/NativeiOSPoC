@@ -62,7 +62,7 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <animations/>
                                 <items>
-                                    <navigationItem title="SAC Test" id="sJo-q5-RV8">
+                                    <navigationItem title="POC app" id="sJo-q5-RV8">
                                         <barButtonItem key="leftBarButtonItem" title="Tirar foto" id="unE-8p-QRa">
                                             <connections>
                                                 <action selector="useCamera" destination="dkx-z0-nzr" id="9pG-mM-FhQ"/>
@@ -113,6 +113,38 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 de 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNP-Mc-pme">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="443" width="360" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-AS-aHW">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="prev"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="482" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="prevPhoto" destination="dkx-z0-nzr" eventType="touchUpInside" id="UwU-dj-5lV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XM1-Et-qyT">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="next"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="512" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="nextPhoto" destination="dkx-z0-nzr" eventType="touchUpInside" id="Tuc-E1-Nip"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
@@ -142,6 +174,11 @@
                             <constraint firstItem="7rJ-n5-kGt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wFZ-bn-Sfu"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="KNP-Mc-pme"/>
+                                <exclude reference="wOF-AS-aHW"/>
+                                <exclude reference="XM1-Et-qyT"/>
+                            </mask>
                             <mask key="constraints">
                                 <exclude reference="Dy2-Jz-uoD"/>
                                 <exclude reference="tBM-fT-cbu"/>
@@ -173,6 +210,11 @@
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="KNP-Mc-pme"/>
+                                <include reference="wOF-AS-aHW"/>
+                                <include reference="XM1-Et-qyT"/>
+                            </mask>
                             <mask key="constraints">
                                 <include reference="Dy2-Jz-uoD"/>
                                 <include reference="tBM-fT-cbu"/>
@@ -199,12 +241,13 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="imageLabel" destination="KNP-Mc-pme" id="bQy-yf-GKS"/>
                         <outlet property="imageView" destination="7rJ-n5-kGt" id="NDR-EA-71v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="349"/>
+            <point key="canvasLocation" x="304.5" y="349"/>
         </scene>
     </scenes>
 </document>
