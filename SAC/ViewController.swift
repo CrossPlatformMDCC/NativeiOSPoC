@@ -21,9 +21,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var signIn : GPPSignIn?
     var latitude : String?
     var longitude : String?
-    let locationManager = CLLocationManager();
-    var photoIndex : Int = 0;
-    var photoArray = [UIImage]();
+    let locationManager = CLLocationManager()
+    var photoIndex : Int = 0
+    var photoArray = [UIImage]()
+    lazy var motionManager = CMMotionManager()
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var imageLabel: UILabel!
@@ -31,6 +32,39 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+//        motionManager.deviceMotionUpdateInterval = 100.0
+//        motionManager.showsDeviceMovementDisplay = true;
+        if motionManager.accelerometerAvailable {
+            let queue = NSOperationQueue()
+            motionManager.startAccelerometerUpdatesToQueue(queue, withHandler: {
+                data, error in
+                guard let data = data else {
+                    return
+                }
+                
+                print("X = \(data.acceleration.x)")
+                //print("Y = \(data.acceleration.y)")
+                //print("Z = \(data.acceleration.z)")
+                if data.acceleration.x > 1.5 {
+                    print("mudar foto AAAAA")
+                    self.nextPhoto()
+                }
+                if data.acceleration.x < -1.5 {
+                    print("mudar foto BBBBB")
+                    self.prevPhoto()
+                }
+            })
+        } else {
+            print("Accelerometer not available")
+        }
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            print("SHAKE IT BABY");
+            self.nextPhoto()
+        }
+//        if (motion == .MotionShake && data.acceleration.x)
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,22 +93,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func useCamera() {
-//        let picker = UIImagePickerController()
-//        
-//        picker.delegate = self
-//        picker.sourceType = .Camera
-//        
-//        presentViewController(picker, animated: true, completion: nil)
-        imageView.image = photoArray[0];
-        photoIndex = 1;
-        updatePhotoLabel();
+        let picker = UIImagePickerController()
+        
+        picker.delegate = self
+        picker.sourceType = .Camera
+        
+        presentViewController(picker, animated: true, completion: nil)
+//        imageView.image = photoArray[0];
+//        photoIndex = 1;
+//        updatePhotoLabel();
     }
     
     @IBAction func prevPhoto() {
+        print(photoIndex)
         showPhoto(photoIndex-1)
     }
     
     @IBAction func nextPhoto() {
+        print(photoIndex)
         showPhoto(photoIndex+1)
     }
     
