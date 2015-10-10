@@ -14,6 +14,13 @@
 		2F3FAC1D1BC200D0009EFB44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F3FAC1B1BC200D0009EFB44 /* LaunchScreen.storyboard */; };
 		2F3FAC281BC200D0009EFB44 /* SACTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3FAC271BC200D0009EFB44 /* SACTests.swift */; };
 		2F3FAC331BC200D0009EFB44 /* SACUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3FAC321BC200D0009EFB44 /* SACUITests.swift */; };
+		2FBE47171BC89A1A00554FA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3FAC141BC200CF009EFB44 /* ViewController.swift */; };
+		2FBE47181BC89A1A00554FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3FAC121BC200CF009EFB44 /* AppDelegate.swift */; };
+		2FBE471A1BC89A1A00554FA0 /* libPods-SAC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F0D0DDE5FF5F1187B94FD6A /* libPods-SAC.a */; };
+		2FBE471C1BC89A1A00554FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F3FAC1B1BC200D0009EFB44 /* LaunchScreen.storyboard */; };
+		2FBE471D1BC89A1A00554FA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F3FAC191BC200D0009EFB44 /* Assets.xcassets */; };
+		2FBE471E1BC89A1A00554FA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F3FAC161BC200CF009EFB44 /* Main.storyboard */; };
+		2FBE47271BC89AE100554FA0 /* libTestComplete-agent-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FBE47251BC89ACF00554FA0 /* libTestComplete-agent-static.a */; settings = {ASSET_TAGS = (); }; };
 		B2405BB1E2D923698938E14C /* libPods-SAC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F0D0DDE5FF5F1187B94FD6A /* libPods-SAC.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +56,9 @@
 		2F3FAC321BC200D0009EFB44 /* SACUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SACUITests.swift; sourceTree = "<group>"; };
 		2F3FAC341BC200D0009EFB44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F3FAC521BC360A2009EFB44 /* SAC-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SAC-Bridging-Header.h"; sourceTree = "<group>"; };
+		2FBE47231BC89A1A00554FA0 /* SAC TestComplete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SAC TestComplete.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FBE47241BC89A1A00554FA0 /* SAC TestComplete-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SAC TestComplete-Info.plist"; path = "/Users/andreibosco/Devel/xcode/SAC/SAC TestComplete-Info.plist"; sourceTree = "<absolute>"; };
+		2FBE47251BC89ACF00554FA0 /* libTestComplete-agent-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libTestComplete-agent-static.a"; sourceTree = "<group>"; };
 		55E6401767524599B0600CCF /* Pods-SAC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAC.release.xcconfig"; path = "Pods/Target Support Files/Pods-SAC/Pods-SAC.release.xcconfig"; sourceTree = "<group>"; };
 		6F0D0DDE5FF5F1187B94FD6A /* libPods-SAC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SAC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E0F5100DC048BC8D8767CA /* Pods-SAC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SAC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SAC/Pods-SAC.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,18 +87,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2FBE47191BC89A1A00554FA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FBE47271BC89AE100554FA0 /* libTestComplete-agent-static.a in Frameworks */,
+				2FBE471A1BC89A1A00554FA0 /* libPods-SAC.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		2F3FAC061BC200CF009EFB44 = {
 			isa = PBXGroup;
 			children = (
+				2FBE47251BC89ACF00554FA0 /* libTestComplete-agent-static.a */,
 				2F3FAC111BC200CF009EFB44 /* SAC */,
 				2F3FAC261BC200D0009EFB44 /* SACTests */,
 				2F3FAC311BC200D0009EFB44 /* SACUITests */,
 				2F3FAC101BC200CF009EFB44 /* Products */,
 				84CE47317614CC51926BE5F1 /* Pods */,
 				9AF5B29AA4D2EA622932E59E /* Frameworks */,
+				2FBE47241BC89A1A00554FA0 /* SAC TestComplete-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +119,7 @@
 				2F3FAC0F1BC200CF009EFB44 /* SAC.app */,
 				2F3FAC231BC200D0009EFB44 /* SACTests.xctest */,
 				2F3FAC2E1BC200D0009EFB44 /* SACUITests.xctest */,
+				2FBE47231BC89A1A00554FA0 /* SAC TestComplete.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +231,25 @@
 			productReference = 2F3FAC2E1BC200D0009EFB44 /* SACUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		2FBE47141BC89A1A00554FA0 /* SAC TestComplete */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FBE47201BC89A1A00554FA0 /* Build configuration list for PBXNativeTarget "SAC TestComplete" */;
+			buildPhases = (
+				2FBE47151BC89A1A00554FA0 /* Check Pods Manifest.lock */,
+				2FBE47161BC89A1A00554FA0 /* Sources */,
+				2FBE47191BC89A1A00554FA0 /* Frameworks */,
+				2FBE471B1BC89A1A00554FA0 /* Resources */,
+				2FBE471F1BC89A1A00554FA0 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SAC TestComplete";
+			productName = SAC;
+			productReference = 2FBE47231BC89A1A00554FA0 /* SAC TestComplete.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -220,7 +261,7 @@
 				TargetAttributes = {
 					2F3FAC0E1BC200CF009EFB44 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 24653QPEJ4;
+						DevelopmentTeam = 767KCQ3BA8;
 					};
 					2F3FAC221BC200D0009EFB44 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -229,6 +270,9 @@
 					2F3FAC2D1BC200D0009EFB44 = {
 						CreatedOnToolsVersion = 7.0.1;
 						TestTargetID = 2F3FAC0E1BC200CF009EFB44;
+					};
+					2FBE47141BC89A1A00554FA0 = {
+						DevelopmentTeam = 767KCQ3BA8;
 					};
 				};
 			};
@@ -248,6 +292,7 @@
 				2F3FAC0E1BC200CF009EFB44 /* SAC */,
 				2F3FAC221BC200D0009EFB44 /* SACTests */,
 				2F3FAC2D1BC200D0009EFB44 /* SACUITests */,
+				2FBE47141BC89A1A00554FA0 /* SAC TestComplete */,
 			);
 		};
 /* End PBXProject section */
@@ -277,9 +322,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2FBE471B1BC89A1A00554FA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FBE471C1BC89A1A00554FA0 /* LaunchScreen.storyboard in Resources */,
+				2FBE471D1BC89A1A00554FA0 /* Assets.xcassets in Resources */,
+				2FBE471E1BC89A1A00554FA0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2FBE47151BC89A1A00554FA0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2FBE471F1BC89A1A00554FA0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SAC/Pods-SAC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		75D68442B98BB5D3B89B49C5 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -335,6 +420,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F3FAC331BC200D0009EFB44 /* SACUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FBE47161BC89A1A00554FA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FBE47171BC89A1A00554FA0 /* ViewController.swift in Sources */,
+				2FBE47181BC89A1A00554FA0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +560,10 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SAC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.great.SAC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -484,6 +582,10 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SAC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.great.SAC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,6 +642,114 @@
 			};
 			name = Release;
 		};
+		2FBE47211BC89A1A00554FA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8E0F5100DC048BC8D8767CA /* Pods-SAC.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "SAC TestComplete-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+					"-ObjC",
+					"-l\"GooglePlusShareActivity\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GoogleOpenSource\"",
+					"-framework",
+					"\"GooglePlus\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.great.SAC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SAC/SAC-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		2FBE47221BC89A1A00554FA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55E6401767524599B0600CCF /* Pods-SAC.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "SAC TestComplete-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+					"-ObjC",
+					"-l\"GooglePlusShareActivity\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GoogleOpenSource\"",
+					"-framework",
+					"\"GooglePlus\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.great.SAC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SAC/SAC-Bridging-Header.h";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -575,6 +785,15 @@
 			buildConfigurations = (
 				2F3FAC3E1BC200D0009EFB44 /* Debug */,
 				2F3FAC3F1BC200D0009EFB44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FBE47201BC89A1A00554FA0 /* Build configuration list for PBXNativeTarget "SAC TestComplete" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FBE47211BC89A1A00554FA0 /* Debug */,
+				2FBE47221BC89A1A00554FA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>SAC TestComplete.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>SAC.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>2F3FAC2D1BC200D0009EFB44</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2FBE47141BC89A1A00554FA0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
