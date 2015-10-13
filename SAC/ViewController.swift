@@ -35,7 +35,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         motionManager.accelerometerUpdateInterval = 0.25
         motionManager.gyroUpdateInterval = 0.5
 //        motionManager.showsDeviceMovementDisplay = true;
-        
 //        motionManager.startDeviceMotionUpdates()
         
         if motionManager.accelerometerAvailable {
@@ -46,9 +45,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     return
                 }
                 
-                print("X = \(data.acceleration.x)")
-                //print("Y = \(data.acceleration.y)")
-                //print("Z = \(data.acceleration.z)")
+//                print("X = \(data.acceleration.x)")
+//                print("Y = \(data.acceleration.y)")
+//                print("Z = \(data.acceleration.z)")
                 if data.acceleration.x > 1.3 && self.photoArray.count != 0 {
                     print("array de fotos:" + String(self.photoArray.count))
                     print("mudar foto AAAAA >>>>>>>")
@@ -96,9 +95,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
 //        photoIndex++;
 //        print(photoIndex);
-        photoIndex = photoArray.count-1;
-        print("Adicionada foto numero" + String(photoIndex))
-        updatePhotoLabel();
+        photoIndex = photoArray.count;
+        print("Adicionada foto numero: " + String(photoIndex))
+//        updatePhotoLabel();
+        imageLabel.text = String(photoIndex) + " de " + String(photoArray.count);
     }
     
     @IBAction func useCameraRoll() {
@@ -117,19 +117,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.sourceType = .Camera
         
         presentViewController(picker, animated: true, completion: nil)
-//        imageView.image = photoArray[0];
-//        photoIndex = 1;
-//        updatePhotoLabel();
     }
     
     @IBAction func prevPhoto() {
-        print("indo para foto: " + String(photoIndex-1))
+//        print("indo para foto: " + String(photoIndex-1))
         showPhoto(photoIndex-1)
     }
     
     @IBAction func nextPhoto() {
 //        print(photoIndex)
-        print("indo para foto: " + String(photoIndex+1))
+//        print("indo para foto: " + String(photoIndex+1))
         showPhoto(photoIndex+1)
     }
     
@@ -140,20 +137,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             index = photoArray.count - 1
         }
         imageView.image = photoArray[index];
-//        if (photoArray.count > 0) {
-//            updatePhotoLabel()
-//        }
         photoIndex = index
         updatePhotoLabel()
-//        if(index >= photos.length)
-//        index = 0;
-//        if(index < 0)
-//        index = photos.length-1;
-//        var img = document.getElementById('camera_image');
-//        img.src = photos[index];
-//        photoIndex = index;
-//        if(photos.length > 0)
-//        $("#nImage").html(index+1 + " de " + photos.length);
     }
     
     func updatePhotoLabel() {
