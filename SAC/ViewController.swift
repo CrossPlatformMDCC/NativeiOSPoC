@@ -34,56 +34,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        motionManager.accelerometerUpdateInterval = 0.25
-        motionManager.gyroUpdateInterval = 0.5
+        motionManager.accelerometerUpdateInterval = 0.15
+//        motionManager.gyroUpdateInterval = 0.5
 //        motionManager.showsDeviceMovementDisplay = true;
 //        motionManager.startDeviceMotionUpdates()
         
-        if motionManager.accelerometerAvailable {
-            let queue = NSOperationQueue()
-            motionManager.startAccelerometerUpdatesToQueue(queue, withHandler: {
-                data, error in
-                guard let data = data else {
-                    return
-                }
-                
-//                print("X = \(data.acceleration.x)")
-//                print("Y = \(data.acceleration.y)")
-//                print("Z = \(data.acceleration.z)")
-                if data.acceleration.x > 1.3 && self.photoArray.count != 0 {
-                    print("array de fotos:" + String(self.photoArray.count))
-                    print("mudar foto AAAAA >>>>>>>")
-                    self.nextPhoto()
-                }
-                if data.acceleration.x < -1.3 && self.photoArray.count != 0 {
-                    print("array de fotos:" + String(self.photoArray.count))
-                    print("<<<<<<< mudar foto BBBBB")
-                    self.prevPhoto()
-                }
-            })
-//            var userAcc: CMAcceleration
-//            var deviceMotion : CMDeviceMotion
-//            deviceMotion = self.motionManager.deviceMotion!
-//            userAcc = deviceMotion.userAcceleration
-//            if (fabs(Float(userAcc.x)) > 2.0) {
-//                print("DIREITAAAAAAA >>>>>")
-//            }
-        } else {
-            print("Accelerometer not available")
-        }
+        motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue()!, withHandler: {
+            (accelerometerData, error) in
+            self.outputAccelerationData(accelerometerData!.acceleration)
+            if (error != nil) {
+                print("\(error)")
+            }
+        })
+        
     }
     
-//    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-//        if motion == .MotionShake && motionManager.accelerometerData?.acceleration.x > 1.5 {
-//            print(motionManager.accelerometerData?.acceleration.x)
-//            print("SHAKE IT RIGHT >>>>>>")
-//            self.nextPhoto()
-//        } else if motion == .MotionShake && motionManager.accelerometerData?.acceleration.x < -1.5 {
-//            print(motionManager.accelerometerData?.acceleration.x)
-//            print("<<<<<< SHAKE IT LEFT")
-//            self.prevPhoto()
-//        }
-//    }
+    func outputAccelerationData(acceleration: CMAcceleration) {
+        print(acceleration.x)
+        if acceleration.x > 1.2 && self.photoArray.count != 0 {
+            print("próxima foto >>>>>>>")
+            nextPhoto();
+        }
+        if acceleration.x < -1.2 && self.photoArray.count != 0 {
+            print("<<<<<<< foto anterior")
+            prevPhoto();
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -95,11 +71,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         photoArray.append(imageView.image!); // salvando imagens em array (FIXME: gambiarra, usa muita memoria)
         dismissViewControllerAnimated(true, completion: nil)
         
-//        photoIndex++;
-//        print(photoIndex);
         photoIndex = photoArray.count;
         print("Adicionada foto numero: " + String(photoIndex))
-//        updatePhotoLabel();
         imageLabel.text = String(photoIndex) + " de " + String(photoArray.count);
     }
     
@@ -122,15 +95,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func prevPhoto() {
-//        print("indo para foto: " + String(photoIndex-1))
         if photoArray.count != 0 {
             showPhoto(photoIndex-1)
         }
     }
     
     @IBAction func nextPhoto() {
-//        print(photoIndex)
-//        print("indo para foto: " + String(photoIndex+1))
         if photoArray.count != 0 {
             showPhoto(photoIndex+1)
         }
