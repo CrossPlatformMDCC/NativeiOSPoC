@@ -32,8 +32,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        motionManager.deviceMotionUpdateInterval = 100.0
+        motionManager.accelerometerUpdateInterval = 0.25
+        motionManager.gyroUpdateInterval = 0.5
 //        motionManager.showsDeviceMovementDisplay = true;
+        
+//        motionManager.startDeviceMotionUpdates()
+        
         if motionManager.accelerometerAvailable {
             let queue = NSOperationQueue()
             motionManager.startAccelerometerUpdatesToQueue(queue, withHandler: {
@@ -45,27 +49,40 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 print("X = \(data.acceleration.x)")
                 //print("Y = \(data.acceleration.y)")
                 //print("Z = \(data.acceleration.z)")
-                if data.acceleration.x > 1.5 {
-                    print("mudar foto AAAAA")
+                if data.acceleration.x > 1.3 && self.photoArray.count != 0 {
+                    print("array de fotos:" + String(self.photoArray.count))
+                    print("mudar foto AAAAA >>>>>>>")
                     self.nextPhoto()
                 }
-                if data.acceleration.x < -1.5 {
-                    print("mudar foto BBBBB")
+                if data.acceleration.x < -1.3 && self.photoArray.count != 0 {
+                    print("array de fotos:" + String(self.photoArray.count))
+                    print("<<<<<<< mudar foto BBBBB")
                     self.prevPhoto()
                 }
             })
+//            var userAcc: CMAcceleration
+//            var deviceMotion : CMDeviceMotion
+//            deviceMotion = self.motionManager.deviceMotion!
+//            userAcc = deviceMotion.userAcceleration
+//            if (fabs(Float(userAcc.x)) > 2.0) {
+//                print("DIREITAAAAAAA >>>>>")
+//            }
         } else {
             print("Accelerometer not available")
         }
     }
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        if motion == .MotionShake {
-            print("SHAKE IT BABY");
-            self.nextPhoto()
-        }
-//        if (motion == .MotionShake && data.acceleration.x)
-    }
+//    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+//        if motion == .MotionShake && motionManager.accelerometerData?.acceleration.x > 1.5 {
+//            print(motionManager.accelerometerData?.acceleration.x)
+//            print("SHAKE IT RIGHT >>>>>>")
+//            self.nextPhoto()
+//        } else if motion == .MotionShake && motionManager.accelerometerData?.acceleration.x < -1.5 {
+//            print(motionManager.accelerometerData?.acceleration.x)
+//            print("<<<<<< SHAKE IT LEFT")
+//            self.prevPhoto()
+//        }
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -79,7 +96,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
 //        photoIndex++;
 //        print(photoIndex);
-        photoIndex = photoArray.count;
+        photoIndex = photoArray.count-1;
+        print("Adicionada foto numero" + String(photoIndex))
         updatePhotoLabel();
     }
     
@@ -105,12 +123,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func prevPhoto() {
-        print(photoIndex)
+        print("indo para foto: " + String(photoIndex-1))
         showPhoto(photoIndex-1)
     }
     
     @IBAction func nextPhoto() {
-        print(photoIndex)
+//        print(photoIndex)
+        print("indo para foto: " + String(photoIndex+1))
         showPhoto(photoIndex+1)
     }
     
@@ -124,7 +143,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 //        if (photoArray.count > 0) {
 //            updatePhotoLabel()
 //        }
-        photoIndex = index;
+        photoIndex = index
         updatePhotoLabel()
 //        if(index >= photos.length)
 //        index = 0;
@@ -138,7 +157,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func updatePhotoLabel() {
-        imageLabel.text = String(photoIndex) + " de " + String(photoArray.count);
+        imageLabel.text = String(photoIndex+1) + " de " + String(photoArray.count);
     }
     
     func photoFilter(filterName: String) {
