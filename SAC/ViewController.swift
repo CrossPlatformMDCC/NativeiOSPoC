@@ -28,8 +28,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var imageLabel: UILabel!
-    @IBOutlet var prevButton: UIButton!
-    @IBOutlet var nextButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,13 +92,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         presentViewController(picker, animated: true, completion: nil)
     }
     
-    @IBAction func prevPhoto() {
+    func prevPhoto() {
         if photoArray.count != 0 {
             showPhoto(photoIndex-1)
         }
     }
     
-    @IBAction func nextPhoto() {
+    func nextPhoto() {
         if photoArray.count != 0 {
             showPhoto(photoIndex+1)
         }

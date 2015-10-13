@@ -17,24 +17,6 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wOF-AS-aHW">
-                                <rect key="frame" x="0.0" y="494" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <animations/>
-                                <state key="normal" title="prev"/>
-                                <connections>
-                                    <action selector="prevPhoto" destination="dkx-z0-nzr" eventType="touchUpInside" id="UwU-dj-5lV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XM1-Et-qyT">
-                                <rect key="frame" x="54" y="494" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <animations/>
-                                <state key="normal" title="next"/>
-                                <connections>
-                                    <action selector="nextPhoto" destination="dkx-z0-nzr" eventType="touchUpInside" id="Tuc-E1-Nip"/>
-                                </connections>
-                            </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="s52-XM-Wtp">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -102,8 +84,6 @@
                     <connections>
                         <outlet property="imageLabel" destination="KNP-Mc-pme" id="bQy-yf-GKS"/>
                         <outlet property="imageView" destination="7rJ-n5-kGt" id="NDR-EA-71v"/>
-                        <outlet property="nextButton" destination="XM1-Et-qyT" id="YZf-qR-J5z"/>
-                        <outlet property="prevButton" destination="wOF-AS-aHW" id="OLq-Tl-pCd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
