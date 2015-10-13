@@ -48,7 +48,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func outputAccelerationData(acceleration: CMAcceleration) {
-        print(acceleration.x)
+//        print(acceleration.x)
         if acceleration.x > 1.2 && self.photoArray.count != 0 {
             print("próxima foto >>>>>>>")
             nextPhoto();
