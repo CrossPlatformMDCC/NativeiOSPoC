@@ -20,7 +20,7 @@
 		2FBE471C1BC89A1A00554FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F3FAC1B1BC200D0009EFB44 /* LaunchScreen.storyboard */; };
 		2FBE471D1BC89A1A00554FA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F3FAC191BC200D0009EFB44 /* Assets.xcassets */; };
 		2FBE471E1BC89A1A00554FA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F3FAC161BC200CF009EFB44 /* Main.storyboard */; };
-		2FBE47271BC89AE100554FA0 /* libTestComplete-agent-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FBE47251BC89ACF00554FA0 /* libTestComplete-agent-static.a */; settings = {ASSET_TAGS = (); }; };
+		2FBE47271BC89AE100554FA0 /* libTestComplete-agent-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FBE47251BC89ACF00554FA0 /* libTestComplete-agent-static.a */; };
 		B2405BB1E2D923698938E14C /* libPods-SAC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F0D0DDE5FF5F1187B94FD6A /* libPods-SAC.a */; };
 /* End PBXBuildFile section */
 
@@ -565,7 +565,7 @@
 					"$(PROJECT_DIR)",
 				);
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.great.SAC;
+				PRODUCT_BUNDLE_IDENTIFIER = br.great.mdcc.SAC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SAC/SAC-Bridging-Header.h";
@@ -587,7 +587,7 @@
 					"$(PROJECT_DIR)",
 				);
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.great.SAC;
+				PRODUCT_BUNDLE_IDENTIFIER = br.great.mdcc.SAC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SAC/SAC-Bridging-Header.h";

@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSAppTransportSecurity</key>
-	<string>NSAllowsArbitraryLoads</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -29,7 +27,7 @@
 			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.great.SAC</string>
+				<string>br.great.mdcc.SAC</string>
 			</array>
 		</dict>
 		<dict>
@@ -37,14 +35,30 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.8be7kjup8eev5ggs7ttdd1jauj1fesju</string>
+				<string>com.googleusercontent.apps.686168425382-8be7kjup8eev5ggs7ttdd1jauj1fesju</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>br.great.mdcc.SAC</string>
+		<string>com.googleusercontent.apps.686168425382-8be7kjup8eev5ggs7ttdd1jauj1fesju</string>
+		<string>com-google-gidconsent-google</string>
+		<string>com-google-gidconsent-youtube</string>
+		<string>com-google-gidconsent</string>
+		<string>com.google.gppconsent.2.4.1</string>
+		<string>com.google.gppconsent.2.4.0</string>
+		<string>googlechrome</string>
+		<string>googlechrome-x-callback</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<string>NSAllowsArbitraryLoads</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -59,8 +73,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
